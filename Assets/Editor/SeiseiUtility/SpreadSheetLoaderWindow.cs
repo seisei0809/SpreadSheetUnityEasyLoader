@@ -48,6 +48,14 @@ public class SpreadSheetLoaderWindow : EditorWindow
     /// Enum型用の型名辞書
     /// </summary>
     private Dictionary<string, string> enumTypeNameDict = new();
+    /// <summary>
+    /// 範囲の開始セル
+    /// </summary>
+    private string startCell = "";
+    /// <summary>
+    /// 範囲の終了セル
+    /// </summary>
+    private string endCell = "";
 
     /// <summary>
     /// ウィンドウを表示
@@ -96,6 +104,8 @@ public class SpreadSheetLoaderWindow : EditorWindow
         // 各種入力フィールドを表示
         spreadsheetId = EditorGUILayout.TextField("Spreadsheet ID", spreadsheetId);
         sheetName = EditorGUILayout.TextField("Sheet Name", sheetName);
+        startCell = EditorGUILayout.TextField("Start Cell (例:A3)", startCell);
+        endCell = EditorGUILayout.TextField("End Cell (例:D10)", endCell);
         savePath = EditorGUILayout.TextField("Save Path", savePath);
 
         // GUIの状態を戻す
@@ -151,8 +161,26 @@ public class SpreadSheetLoaderWindow : EditorWindow
     /// URLを作成して取得する
     /// </summary>
     /// <returns>URL</returns>
-    private string GetSpreadSheetUrl() =>
-        $"https://opensheet.vercel.app/{spreadsheetId}/{sheetName}";
+    private string GetSpreadSheetUrl()
+    {
+        string baseUrl = $"https://opensheet-seisei-custom.vercel.app/api/{spreadsheetId}/{sheetName}";
+
+        // 両方未入力ならそのまま
+        if (string.IsNullOrEmpty(startCell) && string.IsNullOrEmpty(endCell))
+        {
+            return baseUrl;
+        }
+
+        // どちらかだけ入力ならエラー
+        if (string.IsNullOrEmpty(startCell) || string.IsNullOrEmpty(endCell))
+        {
+            Debug.LogError("開始セルと終了セルは両方入力する必要があります");
+            return null;
+        }
+
+        // 両方あるならrangeクエリを付与
+        return $"{baseUrl}?range={startCell}:{endCell}";
+    }
 
     /// <summary>
     /// jsonデータをテキストベースで取得する
