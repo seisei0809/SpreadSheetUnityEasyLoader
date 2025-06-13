@@ -19,7 +19,7 @@ GoogleスプレッドシートのデータをScriptableObjectとして取り込�
 
 ## インストール手順
 
-1. [Releasesページ](https://github.com/seisei0809/SpreadSheetUnityEasyLoader/releases/tag/1.0)から最新版の `.unitypackage` をダウンロード  
+1. [Releasesページ](https://github.com/seisei0809/SpreadSheetUnityEasyLoader/releases/tag/1.1)から最新版の `.unitypackage` をダウンロード  
 2. Unityエディタ上で `Assets` → `Import Package` → `Custom Package...` を選択し、ダウンロードした `.unitypackage` をインポート  
 
 ---
