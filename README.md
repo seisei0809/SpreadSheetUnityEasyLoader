@@ -44,6 +44,10 @@ GoogleスプレッドシートのデータをScriptableObjectとして取り込�
 | Spreadsheet ID | 上記で取得したspreadsheetId |
 | Sheet Name | スプレッドシートのシート名（タブ名） |
 | Save Path | `Assets/` からの保存先フォルダ名 |
+| Start Cell | 範囲指定の開始セル（例：A3）※空なら全体 |
+| End Cell | 範囲指定の終了セル（例：D10）※空なら全体 |
+
+⚠️ **Start CellとEnd Cellは両方入力するか、両方空にする必要があります。片方だけ入力した場合はエラーとなります。**
 
 3. `Preview` ボタンでデータ読み込み＆プレビュー確認  
 4. 必要なら型設定・Enum型の型名を入力  
