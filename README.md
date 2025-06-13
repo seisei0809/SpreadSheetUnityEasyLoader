@@ -64,7 +64,7 @@ Googleスプレッドシートを「ウェブに公開」します。
 
 ## ScriptableObjectの利用例
 
-パッケージには[**Example.cs**](https://github.com/seisei0809/SpreadSheetUnityEasyLoader/blob/main/Assets/Example.cs)も同梱しています。  
+リポジトリには[**Example.cs**](https://github.com/seisei0809/SpreadSheetUnityEasyLoader/blob/main/Assets/Example.cs)があります。  
 このサンプルでは、スプレッドシートデータの行・キー・型別取得や、条件検索の実装例を示しています。
 
 ---
