@@ -75,7 +75,7 @@ GoogleスプレッドシートのデータをScriptableObjectとして取り込�
 - **スプレッドシートは「リンクを知ってる全員に公開」にしないと読み込めません**  
   必ず事前に共有から公開設定を行ってください  
 
-- **opensheet-seisei-custom.vercel.app** を利用しているため、**公開範囲に注意**してください  
+- [**opensheet-seisei-custom.vercel.app**](https://github.com/seisei0809/opensheet-seisei-custom) を利用しているため、**公開範囲に注意**してください  
   公開されたスプレッドシートは**URLを知っている全員が閲覧可能**になります  
 
 - **スプレッドシートの構成ルール**
