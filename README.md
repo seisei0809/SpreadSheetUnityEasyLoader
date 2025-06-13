@@ -31,9 +31,8 @@ GoogleスプレッドシートのデータをScriptableObjectとして取り込�
 Googleスプレッドシートを「ウェブに公開」します。
 
 1. Googleスプレッドシートを開く  
-2. メニューから **「ファイル」→「ウェブに公開」** を選択  
-3. 公開対象を「**ドキュメント全体**」または「**シート単体**」で公開  
-4. URLから `spreadsheetId` を取得（URLの `/d/` と `/edit` の間の文字列）
+2. 一般的なアクセスを **「共有」→「リンクを知っている全員」** に変更  
+3. URLから `spreadsheetId` を取得（URLの `/d/` と `/edit` の間の文字列）
 
 例：  https://docs.google.com/spreadsheets/d/【ここがspreadsheetId】/edit#gid=0
 
