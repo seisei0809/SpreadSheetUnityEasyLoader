@@ -125,6 +125,7 @@ public class SpreadSheetLoaderWindow : EditorWindow
 
             // スプレッドシートのURLを生成
             string url = GetSpreadSheetUrl();
+            if(url == null) return;
 
             // スプレッドシートの内容をJSON形式で取得
             string jsonText = GetJsonData(url);
