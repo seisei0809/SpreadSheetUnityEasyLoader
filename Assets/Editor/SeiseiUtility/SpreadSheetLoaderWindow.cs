@@ -33,9 +33,17 @@ public class SpreadSheetLoaderWindow : EditorWindow
     /// </summary>
     private SpreadSheetData previewData = null;
     /// <summary>
-    /// スクロールの現在座標
+    /// スクロールの現在座標(プレビュー用)
     /// </summary>
     private Vector2 scrollPosition = Vector2.zero;
+    /// <summary>
+    /// スクロールの現在座標(型指定用)
+    /// </summary>
+    private Vector2 scrollPosition2 = Vector2.zero;
+    /// <summary>
+    /// スクロールの現在座標(列挙型用)
+    /// </summary>
+    private Vector2 scrollPosition3 = Vector2.zero;
     /// <summary>
     /// プレビューを出しているか
     /// </summary>
@@ -444,6 +452,9 @@ public class SpreadSheetLoaderWindow : EditorWindow
 
         EditorGUILayout.LabelField("Input Enum Type", EditorStyles.boldLabel);
 
+        // スクロールビュー開始
+        scrollPosition3 = EditorGUILayout.BeginScrollView(scrollPosition3);
+
         foreach (var key in rowTypeDict.Keys)
         {
             // 型がEnumのフィールド用にだけ表示
@@ -454,6 +465,8 @@ public class SpreadSheetLoaderWindow : EditorWindow
                 enumTypeNameDict[key] = newType;
             }
         }
+
+        EditorGUILayout.EndScrollView();
     }
 
     /// <summary>
@@ -462,6 +475,9 @@ public class SpreadSheetLoaderWindow : EditorWindow
     private void DrawRowTypeUI()
     {
         EditorGUILayout.LabelField("Type Settings per Field", EditorStyles.boldLabel);
+
+        // スクロールビュー開始
+        scrollPosition2 = EditorGUILayout.BeginScrollView(scrollPosition2);
 
         // 辞書のキー一覧を取得してループ
         List<string> keys = new List<string>(rowTypeDict.Keys);
@@ -480,6 +496,8 @@ public class SpreadSheetLoaderWindow : EditorWindow
         {
             ApplyRowType();
         }
+
+        EditorGUILayout.EndScrollView();
     }
 
     /// <summary>
